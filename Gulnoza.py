@@ -1,29 +1,29 @@
-PRICE_STUDENT = 2.00
-PRICE_REGULAR = 4.00
-PRICE_PREMIUM = 6.00
-DISCOUNT_THRESHOLD = 15.00
-DISCOUNT_AMOUNT = 2.50
-STOP_WORD = 'done'
+Price_student = 2.00
+Price_regular = 4.00
+Price_premium = 6.00
+Discount_threshold = 15.00
+Discount_amount = 2.50
+Stop_word = 'done'
 
 current_subtotal = 0.00
 
 print("\n=== Book Rental System ===")
 print("Enter membership type: student, regular, or premium")
-print(f"Type '{STOP_WORD}' when finished selecting books\n")
+print(f"Type 'done' when finished selecting books\n")
 
 while True:
     membership_type = input("Enter membership type: ")
 
-    if membership_type == STOP_WORD:
+    if membership_type == Stop_word:
         break
 
     price = 0.00
     if membership_type == 'student':
-        price = PRICE_STUDENT
+        price = Price_student
     elif membership_type == 'regular':
-        price = PRICE_REGULAR
+        price = Price_regular
     elif membership_type == 'premium':
-        price = PRICE_PREMIUM
+        price = Price_premium
     else:
         print("Invalid membership type. Please enter 'student', 'regular', or 'premium'.")
         continue
@@ -35,8 +35,8 @@ while True:
 print("\n=== Rental Summary ===")
 
 bulk_discount = 0.00
-if current_subtotal >= DISCOUNT_THRESHOLD:
-    bulk_discount = DISCOUNT_AMOUNT
+if current_subtotal >= Discount_threshold:
+    bulk_discount = Discount_amount
 
 final_total = current_subtotal - bulk_discount
 
@@ -48,4 +48,5 @@ else:
     print("Bulk Rental Discount: $0.00")
 
 print(f"Final Total: ${final_total:.2f}")
+
 print("Thank you for your rental!\n")
